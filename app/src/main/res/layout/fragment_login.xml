@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/black"
     tools:context=".MainActivity"
-    android:id="@+id/fragment_create_pass_word">
+    android:id="@+id/fragment_login">
 
 
     <View
@@ -20,40 +20,40 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/createName"
+        android:id="@+id/editText1"
         android:layout_width="276dp"
         android:layout_height="50dp"
-        android:hint="생성할 이름을 입력하세요."
+        android:hint="이름을 입력하세요."
         app:layout_constraintTop_toTopOf="@id/loginBackground"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         android:layout_marginTop="90dp"/>
     <EditText
-        android:id="@+id/createPw"
+        android:id="@+id/editText2"
         android:layout_width="276dp"
         android:layout_height="50dp"
-        android:hint="생성할 비밀번호를 입력하세요."
-        app:layout_constraintTop_toBottomOf="@+id/createName"
+        android:hint="비밀번호를 입력하세요."
+        app:layout_constraintTop_toBottomOf="@+id/editText1"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         android:layout_marginTop="30dp"/>
-
     <TextView
+        android:id="@+id/if_noButton"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/createPw"
-        android:text="소중한 하루하루를 기록해보아요!"
+        android:layout_height="20dp"
+        android:text="계정이 없으신가요?"
+        android:textSize="10sp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        android:textSize="12dp"
-        android:fontFamily="@font/font" />
+        android:layout_marginLeft="180dp"
+        app:layout_constraintTop_toBottomOf="@id/editText2" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/createButton"
+        android:id="@+id/loginButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/login_button"
-        android:text="계정 생성하기"
+        android:text="로그인하기"
         android:fontFamily="@font/font"
         android:textColor="@color/white"
         android:textSize="25sp"
