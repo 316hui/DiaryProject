@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/monthDay_tv"
+        android:layout_width="120dp"
+        android:layout_height="26dp"
+        android:text="달/날짜"
+        android:fontFamily="@font/font_bold"
+        android:textColor="@color/white"
+        android:textSize="23sp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="73dp"
+        android:layout_marginLeft="19dp"
+
+        />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="111dp"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/insideConstraint"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/linear1"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="282dp"
+                android:layout_marginBottom="400dp"
+                android:orientation="horizontal"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/insideConstraint">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/bottom_button1"
+                    android:fontFamily="@font/font"
+                    android:text="Todo"
+                    android:textColor="@drawable/bottom_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="28dp"
+                    android:background="@drawable/bottom_button"
+                    android:textAllCaps="false"/>
+지
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/bottom_button2"
+                    android:fontFamily="@font/font"
+                    android:text="Schedule"
+                    android:textColor="@drawable/bottom_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="28dp"
+                    android:background="@drawable/bottom_button"
+                    android:textAllCaps="false"/>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/bottom_button3"
+                    android:fontFamily="@font/font"
+                    android:text="Note"
+                    android:textColor="@drawable/bottom_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="28dp"
+                    android:background="@drawable/bottom_button"
+                    android:textAllCaps="false"/>
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/editText"
+                android:layout_width="match_parent"
+                android:layout_height="468dp"
+                android:layout_marginTop="25dp"
+                android:background="@drawable/edit_text"
+                app:layout_constraintTop_toBottomOf="@id/linear1"
+                android:gravity="top"
+                android:drawableEnd="@drawable/ic_pen"
+                android:drawablePadding="-20dp" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bnv_main"
+        android:layout_width="266dp"
+        android:layout_height="68dp"
+        app:menu="@menu/menu"
+        android:background="@drawable/login_button"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="11dp"
+        app:labelVisibilityMode="unlabeled"/>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+

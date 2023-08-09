@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    tools:context=".MainActivity">
+
+
+    <View
+        android:id="@+id/loginBackground"
+        android:layout_width="350dp"
+        android:layout_height="443dp"
+        android:layout_marginTop="250dp"
+        android:background="@drawable/edit_text"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/createName"
+        android:layout_width="276dp"
+        android:layout_height="50dp"
+        android:hint="생성할 이름을 입력하세요."
+        app:layout_constraintTop_toTopOf="@id/loginBackground"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="90dp"/>
+    <EditText
+        android:id="@+id/createPw"
+        android:layout_width="276dp"
+        android:layout_height="50dp"
+        android:hint="생성할 비밀번호를 입력하세요."
+        app:layout_constraintTop_toBottomOf="@+id/createName"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="30dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/createPw"
+        android:text="소중한 하루하루를 기록해보아요!"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:textSize="12dp"
+        android:fontFamily="@font/font" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/createButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/login_button"
+        android:text="계정 생성하기"
+        android:fontFamily="@font/font"
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toBottomOf="@id/loginBackground"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="530dp"
+        />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
