@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/nav_graph"
     app:startDestination="@id/homeFragment">
@@ -8,7 +9,8 @@
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.example.diaryproject.HomeFragment"
-        android:label="HomeFragment" >
+        android:label="HomeFragment"
+        tools:layout="@layout/fragment_home">
         <action
             android:id="@+id/action_homeFragment_to_myPageFragment"
             app:destination="@id/myPageFragment" />
@@ -16,7 +18,8 @@
     <fragment
         android:id="@+id/myPageFragment"
         android:name="com.example.diaryproject.MyPageFragment"
-        android:label="MyPageFragment" >
+        android:label="MyPageFragment"
+        tools:layout="@layout/fragment_my_page">
         <action
             android:id="@+id/action_myPageFragment_to_homeFragment2"
             app:destination="@id/homeFragment" />

@@ -9,6 +9,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.navigation.NavController
+import androidx.navigation.Navigation
+import androidx.navigation.Navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import com.example.diaryproject.databinding.FragmentLoginBinding
 import retrofit2.Call
 import retrofit2.Callback
@@ -29,11 +33,14 @@ class LoginFragment : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
 
+    lateinit var navController: NavController
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
+
+            navController = findNavController()
         }
     }
 
@@ -102,10 +109,7 @@ class LoginFragment : Fragment() {
                             if (savedName == name && savedPw == pw) {
                                 val homeFragment: HomeFragment = HomeFragment()
 
-                                val fragment = HomeFragment()
-                                activity?.supportFragmentManager?.beginTransaction()
-                                    ?.replace(R.id.fragment_home, fragment) // 수정된 레이아웃 ID 사용
-                                    ?.commit()
+                                navController.navigate(R.id.fragment_home)
 
 
                                 Toast.makeText(requireContext(), "로그인 성공", Toast.LENGTH_SHORT)
@@ -139,11 +143,7 @@ class LoginFragment : Fragment() {
         binding.ifNoButton.setOnClickListener {
             val fragment = CreatePassWord()
 
-            // 프래그먼트를 액티비티에 추가 / activity가 null 이라는 것은 참조하는 프래그먼트가 없다는 것.
-            activity?.supportFragmentManager?.beginTransaction()
-                ?.replace(R.id.fragment_home, fragment) // 수정된 레이아웃 ID 사용
-                ?.commit()
-            Log.d(ContentValues.TAG, "버튼 눌림")
+            navController.navigate(R.id.fragment_create_pass_word)
         }
         return binding.root
         //프래그먼트의 레이아웃을 액티비티에 표시하기 위한 작업x, 프래그먼트 자체의 UI를 설정하고 반환하는 역할.
